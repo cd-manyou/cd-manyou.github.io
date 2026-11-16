@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>慢游科技 · 系统案例介绍</title>
+<meta name="description" content="慢游科技九个已交付行业系统案例：交通出行、物流运输、仓储供应链、商贸流通、文旅消费、公共文化、医疗照护与消息中台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230B0F13%22/%3E%3Cpath d=%22M8 23V9h3.6l4.4 6.2L20.4 9H24v14h-3.4v-8.1L16 20.6 11.4 14.9V23H8Z%22 fill=%22%233ED3C9%22/%3E%3C/svg%3E">
+<style>
+:root {
+  --ink: #0E1216; --ink2: #3D454C; --mut: #79828A; --line: #E2E6E8;
+  --bg: #F4F6F6; --paper: #FFFFFF; --acc: #0E6E7E; --acc2: #0B4F5C;
+  --dark: #0B0F13; --dark-line: rgba(255,255,255,.14);
+  --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: #CFE7EA; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- 顶栏 ---------- */
+.top { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .06em; font-size: 15px; }
+.brand svg { width: 22px; height: 22px; }
+.nav { display: flex; gap: 26px; font-size: 14px; color: var(--ink2); }
+.nav a { padding: 4px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.nav a:hover { color: var(--acc); border-color: var(--acc); }
+.top-meta { font-size: 13px; color: var(--mut); font-variant-numeric: tabular-nums; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 64px 0 48px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
+h1 { font-size: clamp(34px, 5.4vw, 62px); line-height: 1.08; letter-spacing: -.015em; font-weight: 600; margin: 0 0 22px; }
+h1 em { font-style: normal; color: var(--acc2); }
+.hero-lead { font-size: 17px; line-height: 1.8; color: var(--ink2); max-width: 560px; margin: 0 0 34px; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--line); }
+.stat { padding: 16px 22px 0 0; margin-right: 22px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-size: 24px; line-height: 1.2; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat span { display: block; font-size: 12px; color: var(--mut); margin-top: 2px; letter-spacing: .02em; }
+
+.specimen { background: var(--dark); padding: 16px 16px 12px; border-radius: 6px; position: relative; }
+.specimen::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--acc); border-radius: 6px 6px 0 0; }
+.specimen img { border: 1px solid var(--dark-line); border-radius: 3px; }
+.specimen figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; color: rgba(255,255,255,.62); font-size: 12px; padding-top: 10px; letter-spacing: .02em; }
+.specimen figcaption b { color: #E8EDEF; font-weight: 500; min-width: 0; }
+.specimen figcaption span { min-width: 0; }
+
+/* ---------- 索引 ---------- */
+.index { padding-top: 26px; padding-bottom: 8px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 0; }
+.sec-head h2 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .04em; }
+.sec-head span { font-size: 12px; color: var(--mut); font-variant-numeric: tabular-nums; }
+.ix-row { display: grid; grid-template-columns: 46px 1fr auto; align-items: baseline; gap: 6px 14px; padding: 16px 8px; border-bottom: 1px solid var(--line); transition: background .18s; }
+.ix-row:hover { background: var(--paper); }
+.ix-n { color: var(--mut); font-size: 13px; font-variant-numeric: tabular-nums; }
+.ix-row:hover .ix-n { color: var(--acc); }
+.ix-name { font-size: 18px; font-weight: 500; }
+.ix-name em { display: block; font-style: normal; font-size: 13px; color: var(--mut); margin-top: 3px; }
+.ix-ind { font-size: 13px; color: var(--ink2); }
+.ix-tech { display: none; }
+
+/* ---------- 案例 ---------- */
+.cases { margin-top: 56px; }
+.case { padding: 56px 0 64px; border-top: 1px solid var(--line); }
+.case-grid, .case { display: block; }
+.case-text, .case-media { min-width: 0; }
+.case .case-text > * + * { margin-top: 0; }
+.case-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .04em; color: var(--mut); }
+.case-eyebrow .num { color: var(--acc); font-weight: 600; font-variant-numeric: tabular-nums; }
+.case-eyebrow .ind::before { content: ""; display: inline-block; width: 14px; height: 1px; background: var(--line); vertical-align: middle; margin-right: 12px; }
+.case h3 { font-size: 30px; line-height: 1.25; font-weight: 600; margin: 12px 0 4px; letter-spacing: .01em; }
+.en { font-size: 11px; letter-spacing: .12em; color: var(--mut); text-transform: none; }
+.tagline { font-size: 18px; color: var(--acc2); margin: 18px 0 12px; font-weight: 500; line-height: 1.6; }
+.pos { font-size: 16px; color: var(--ink2); margin: 0 0 24px; }
+.ends { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 26px; }
+.lb { font-size: 12px; color: var(--mut); letter-spacing: .04em; margin-right: 4px; }
+.chip { display: inline-block; border: 1px solid var(--line); background: var(--paper); padding: 4px 10px; font-size: 12px; color: var(--ink2); border-radius: 2px; white-space: nowrap; }
+.fns { margin: 0 0 24px; border-top: 1px solid var(--line); }
+.fn { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.fn dt { font-size: 14px; font-weight: 600; }
+.fn dd { margin: 0; font-size: 13px; color: var(--mut); line-height: 1.6; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tag { font-size: 12px; padding: 2px 0; color: var(--mut); border: 0; background: none; }
+.tags { gap: 14px; row-gap: 6px; }
+
+.frame { margin: 0 0 12px; background: var(--paper); border: 1px solid var(--line); padding: 10px; border-radius: 4px; }
+.frame img { width: 100%; }
+.frame figcaption { display: flex; gap: 10px; align-items: baseline; font-size: 12px; color: var(--mut); padding: 10px 2px 2px; }
+.cap-mode { color: var(--acc); letter-spacing: .04em; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--line); padding-top: 10px; }
+.tab { font: inherit; font-size: 12px; color: var(--mut); background: none; border: 0; border-bottom: 1px solid transparent; padding: 6px 2px 5px; cursor: pointer; transition: color .18s, border-color .18s; text-align: left; }
+.tab span { color: #AEB7BC; margin-right: 6px; font-variant-numeric: tabular-nums; }
+.tab:hover { color: var(--ink); }
+.tab.on { color: var(--acc); border-bottom-color: var(--acc); }
+
+/* ---------- 能力（深色带） ---------- */
+.stack { background: var(--dark); color: #EDF1F2; margin-top: 40px; padding: 64px 0 72px; }
+.stack .sec-head { border-color: var(--dark-line); }
+.stack .sec-head h2 { color: #EDF1F2; }
+.stack .sec-head span { color: rgba(255,255,255,.5); }
+.stack h3 { font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; margin: 26px 0 14px; letter-spacing: .01em; }
+.stack-lead { color: rgba(255,255,255,.66); max-width: 640px; margin: 0 0 36px; font-size: 15px; }
+.caps { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--dark-line); }
+.cap { padding: 24px 0; border-bottom: 1px solid var(--dark-line); }
+.cap h4 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+.cap p { margin: 0 0 14px; font-size: 13.5px; line-height: 1.8; color: rgba(255,255,255,.66); }
+.tag.dark { color: rgba(255,255,255,.52); }
+
+/* ---------- 页脚 ---------- */
+.foot { padding: 48px 0 40px; }
+.foot-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.foot h5 { font-size: 14px; font-weight: 600; margin: 0 0 10px; }
+.foot p { margin: 0; font-size: 13.5px; color: var(--mut); line-height: 1.8; max-width: 520px; }
+.foot-line { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--mut); }
+
+@media (max-width: 759px) {
+  .top .wrap { gap: 10px; }
+  .top-meta { display: none; }
+  .nav { gap: 14px; font-size: 13px; }
+  .nav a:nth-child(2) { display: none; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .stat { padding: 14px 12px 14px 0; margin: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stat:nth-child(even) { border-right: 0; padding-left: 16px; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-bottom: 0; }
+  .stat b { font-size: 22px; }
+}
+@media (min-width: 760px) {
+  .wrap { padding: 0 32px; }
+  .hero { padding: 88px 0 64px; }
+  .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: end; }
+  .ix-row { grid-template-columns: 56px 1fr 130px 150px; align-items: center; }
+  .ix-tech { display: block; font-size: 12px; color: var(--mut); text-align: right; }
+  .case { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; padding: 72px 0 80px; }
+  .case.flip .case-text { order: 2; }
+  .case.flip .case-media { order: 1; }
+  .fn { grid-template-columns: 180px 1fr; gap: 16px; align-items: baseline; }
+  .caps { grid-template-columns: 1fr 1fr; }
+  .cap { padding: 28px 32px 28px 0; }
+  .cap:nth-child(even) { padding-left: 32px; border-left: 1px solid var(--dark-line); }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+}
+@media (min-width: 1100px) {
+  .fn { grid-template-columns: 200px 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#0B0F13"/><path d="M8 23V9h3.6l4.4 6.2L20.4 9H24v14h-3.4v-8.1L16 20.6 11.4 14.9V23H8Z" fill="#3ED3C9"/></svg>
+      慢游科技
+    </a>
+    <nav class="nav">
+      <a href="#cases">系统案例</a>
+      <a href="#index">案例索引</a>
+      <a href="#stack">技术底座</a>
+    </nav>
+    <div class="top-meta">2026 · 案例册</div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>把行业流程<br>做成可交付<em>系统</em>。</h1>
+        <p class="hero-lead">九个已落地的行业系统：客运生产、物流运输、仓储供应链、商贸流通、徒步文旅、公共文化、病区关护与消息中台。它们共用一套微服务骨架，差异留在业务层。</p>
+        <div class="stat-row">
+          <div class="stat"><b>9</b><span>已交付系统</span></div>
+          <div class="stat"><b>20</b><span>终端形态</span></div>
+          <div class="stat"><b>8</b><span>行业场景</span></div>
+          <div class="stat"><b>20+</b><span>领域服务模块</span></div>
+        </div>
+      </div>
+      <figure class="specimen">
+        <img src="assets/keyun-1.jpg" alt="客运生产管理系统 · 经营看板">
+        <figcaption><b>客运生产管理系统</b><span>经营看板与回款预警</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="index wrap" id="index">
+    <div class="sec-head"><h2>案例索引</h2><span>01 — 09</span></div>
+    <a class="ix-row" href="#case-huakexing">
+      <span class="ix-n">01</span>
+      <span class="ix-name">华客行<em>四端协同的城市交通出行一体化平台</em></span>
+      <span class="ix-ind">交通出行</span>
+      <span class="ix-tech">云原生微服务</span>
+    </a><a class="ix-row" href="#case-keyun">
+      <span class="ix-n">02</span>
+      <span class="ix-name">客运生产管理系统<em>以包车业务为主线的生产经营系统</em></span>
+      <span class="ix-ind">交通出行</span>
+      <span class="ix-tech">多端生产系统</span>
+    </a><a class="ix-row" href="#case-shihuitong">
+      <span class="ix-n">03</span>
+      <span class="ix-name">食汇通<em>PC 与 PDA 双端的食品仓储管理系统</em></span>
+      <span class="ix-ind">仓储供应链</span>
+      <span class="ix-tech">PC + PDA 双端</span>
+    </a><a class="ix-row" href="#case-guanhu">
+      <span class="ix-n">04</span>
+      <span class="ix-name">智能关护管理系统<em>病区患者安全照护的三端一体方案</em></span>
+      <span class="ix-ind">医疗照护</span>
+      <span class="ix-tech">物联网 + 时序库</span>
+    </a><a class="ix-row" href="#case-wenlian">
+      <span class="ix-n">05</span>
+      <span class="ix-name">文联资源平台<em>四川文艺资源的一体化归集与展示平台</em></span>
+      <span class="ix-ind">公共文化</span>
+      <span class="ix-tech">检索与资源中台</span>
+    </a><a class="ix-row" href="#case-tulv">
+      <span class="ix-n">06</span>
+      <span class="ix-name">徒旅峨边<em>徒步文旅场景的三端一体数字化平台</em></span>
+      <span class="ix-ind">文旅消费</span>
+      <span class="ix-tech">Java 17 模块化单体</span>
+    </a><a class="ix-row" href="#case-msg">
+      <span class="ix-n">07</span>
+      <span class="ix-name">消息中心<em>多通道统一消息推送管理平台</em></span>
+      <span class="ix-ind">消息中台</span>
+      <span class="ix-tech">消息中台 + 流处理</span>
+    </a><a class="ix-row" href="#case-tms">
+      <span class="ix-n">08</span>
+      <span class="ix-name">慢游TMS<em>货主到结算的物流运输管理系统</em></span>
+      <span class="ix-ind">物流运输</span>
+      <span class="ix-tech">物流 TMS + 移动端</span>
+    </a><a class="ix-row" href="#case-erp">
+      <span class="ix-n">09</span>
+      <span class="ix-name">慢游ERP<em>采购销售库存财务一体的进销存系统</em></span>
+      <span class="ix-ind">商贸流通</span>
+      <span class="ix-tech">Django + Vue 进销存</span>
+    </a>
+  </section>
+
+  <div class="cases" id="cases">
+    <div class="wrap">
+
+    <section class="case " id="case-huakexing">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">01</span><span class="ind">交通出行</span></div>
+        <h3>华客行</h3>
+        <div class="en">Integrated Passenger Platform</div>
+        <p class="tagline">四端协同的城市交通出行一体化平台</p>
+        <p class="pos">面向城际出行与旅游客运的一体化乘客服务平台，覆盖旅游直通车、包车、交通车、汽车票四类产品。后台、用户、司机、调度四端共用一套运力与订单数据，把产品配置、班次排班、订单调度、司机执行到结算营销串成一条完整链路。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">后台管理端</span><span class="chip">用户端</span><span class="chip">司机端</span><span class="chip">调度端</span></div>
+        <dl class="fns"><div class="fn"><dt>产品与站点配置</dt><dd>平台站点、线路、班次按所属区域维护，支持上下架与分销模式</dd></div><div class="fn"><dt>多业务统一下单</dt><dd>旅游直通车、包车、交通车、汽车票进入同一订单体系</dd></div><div class="fn"><dt>运力与调度</dt><dd>车辆、司机排班派单，调度端集中处理线路与包车订单</dd></div><div class="fn"><dt>司机执行与上报</dt><dd>司机端接单、发车、行程上报，闭环回到调度端</dd></div><div class="fn"><dt>运营与财务</dt><dd>营销活动、评价体系、财务结算与经营数据看板</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Spring Boot 2.0.2</span><span class="tag">Spring Cloud Finchley</span><span class="tag">Eureka</span><span class="tag">Gateway</span><span class="tag">TX-LCN</span><span class="tag">MySQL</span><span class="tag">Docker</span><span class="tag">Swagger</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/huakexing-1.jpg" alt="华客行 · 平台站点管理" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">平台站点管理</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="华客行 界面切换"><button class="tab on" type="button" data-src="assets/huakexing-1.jpg" data-cap="平台站点管理"><span>01</span>平台站点管理</button><button class="tab" type="button" data-src="assets/huakexing-2.jpg" data-cap="平台线路管理"><span>02</span>平台线路管理</button><button class="tab" type="button" data-src="assets/huakexing-3.jpg" data-cap="班次管理"><span>03</span>班次管理</button></div>
+      </div>
+    </section>
+    <section class="case flip" id="case-keyun">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">02</span><span class="ind">交通出行</span></div>
+        <h3>客运生产管理系统</h3>
+        <div class="en">Charter Operation System</div>
+        <p class="tagline">以包车业务为主线的生产经营系统</p>
+        <p class="pos">以包车业务为主线的生产型管理系统。业务员、调度、财务、管理四类角色在 PC 端协同完成录单、调度与结算，运客管移动端承接外勤工单，运智驾供司机接单、发车与收款，三端配合跑通包车业务全流程。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">PC 管理端</span><span class="chip">运客管移动端</span><span class="chip">运智驾司机端</span></div>
+        <dl class="fns"><div class="fn"><dt>订单录入与补录</dt><dd>客户、联系人、用车日期、行程模板与每日行程分段录入</dd></div><div class="fn"><dt>车辆调度</dt><dd>调度模式、班段调度、运力需求与已调车辆统一编排</dd></div><div class="fn"><dt>结算与回款预警</dt><dd>待处理结算单、退款单、逾期订单与回款截止日预警</dd></div><div class="fn"><dt>报表与经营看板</dt><dd>车辆运行统计、订单应收款统计、运行工单数实时呈现</dd></div><div class="fn"><dt>移动外勤与司机执行</dt><dd>外勤处理工单；司机接单、发车执行、司机收款</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">JDK 8</span><span class="tag">Spring Boot 2.7.18</span><span class="tag">Spring Cloud 2021.0.9</span><span class="tag">Nacos</span><span class="tag">MyBatis-Plus</span><span class="tag">RocketMQ</span><span class="tag">Redisson</span><span class="tag">EasyExcel</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/keyun-1.jpg" alt="客运生产管理系统 · 经营看板与回款预警" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">经营看板与回款预警</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="客运生产管理系统 界面切换"><button class="tab on" type="button" data-src="assets/keyun-1.jpg" data-cap="经营看板与回款预警"><span>01</span>经营看板与回款预警</button><button class="tab" type="button" data-src="assets/keyun-2.jpg" data-cap="车辆调度"><span>02</span>车辆调度</button><button class="tab" type="button" data-src="assets/keyun-3.jpg" data-cap="订单补录"><span>03</span>订单补录</button></div>
+      </div>
+    </section>
+    <section class="case " id="case-shihuitong">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">03</span><span class="ind">仓储供应链</span></div>
+        <h3>食汇通</h3>
+        <div class="en">Warehouse Management System</div>
+        <p class="tagline">PC 与 PDA 双端的食品仓储管理系统</p>
+        <p class="pos">面向食品仓储场景的 WMS。PC 端管理货品、库区与客户基础资料，完成入库、出库、盘点与货品转移；PDA 端在库内完成移动收货与发货。系统同时提供效期预警、库存与报表查询以及财务收款，实现仓储业务的全流程管控。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">PC 端</span><span class="chip">PDA 端</span></div>
+        <dl class="fns"><div class="fn"><dt>入库管理</dt><dd>按货主与货品编码登记到货，批量提交、导入与打印入库单</dd></div><div class="fn"><dt>出库管理</dt><dd>出库单生成、状态跟踪与发货确认</dd></div><div class="fn"><dt>盘点作业</dt><dd>盘点计划、盘点单与差异核对</dd></div><div class="fn"><dt>库存与效期</dt><dd>库位库存、效期预警、临期与过期库存统计</dd></div><div class="fn"><dt>货品转移与财务</dt><dd>库区之间货品转移；收款登记与库存报表</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">JDK 8</span><span class="tag">Spring Boot 2.7.18</span><span class="tag">Spring Cloud Alibaba</span><span class="tag">Nacos</span><span class="tag">MyBatis-Plus</span><span class="tag">Redisson</span><span class="tag">XXL-Job</span><span class="tag">PDA</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/shihuitong-1.jpg" alt="食汇通 · 入库管理" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">入库管理</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="食汇通 界面切换"><button class="tab on" type="button" data-src="assets/shihuitong-1.jpg" data-cap="入库管理"><span>01</span>入库管理</button><button class="tab" type="button" data-src="assets/shihuitong-2.jpg" data-cap="出库单"><span>02</span>出库单</button><button class="tab" type="button" data-src="assets/shihuitong-3.jpg" data-cap="盘点计划"><span>03</span>盘点计划</button><button class="tab" type="button" data-src="assets/shihuitong-4.jpg" data-cap="库位库存与效期预警"><span>04</span>库位库存与效期预警</button></div>
+      </div>
+    </section>
+    <section class="case flip" id="case-guanhu">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">04</span><span class="ind">医疗照护</span></div>
+        <h3>智能关护管理系统</h3>
+        <div class="en">Smart Patient Care Platform</div>
+        <p class="tagline">病区患者安全照护的三端一体方案</p>
+        <p class="pos">面向医院病区患者安全照护的智能平台。以手环、工牌、基站与摄像头为感知层，把室内外融合定位、健康体征监测、电子围栏、告警处置、查房巡视与视频监控连成闭环，为院内提供可落地的智慧安全关护能力。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">PC 管理端</span><span class="chip">医护 PDA（App / H5 / 小程序）</span></div>
+        <dl class="fns"><div class="fn"><dt>患者档案与出入院</dt><dd>患者、医护、病区房间与床位基础档案管理</dd></div><div class="fn"><dt>设备接入与绑定</dt><dd>手环扫码绑定、换绑、解绑，工牌、基站、摄像头统一纳管</dd></div><div class="fn"><dt>定位与电子围栏</dt><dd>室内外融合定位、轨迹回放、越界与未按时返房告警</dd></div><div class="fn"><dt>健康监测</dt><dd>心率、血压、血氧、睡眠数据采集与异常提示</dd></div><div class="fn"><dt>告警处置与视频联动</dt><dd>告警分级、处置留痕，联动调取现场监控与告警录像</dd></div><div class="fn"><dt>查房与住院记录</dt><dd>查房计划、巡视记录、用药与住院记录</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Java 8</span><span class="tag">Spring Cloud Alibaba</span><span class="tag">PostGIS</span><span class="tag">TDengine</span><span class="tag">MQTT</span><span class="tag">Flowable</span><span class="tag">Vue 3.5</span><span class="tag">uni-app</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/guanhu-1.jpg" alt="智能关护管理系统 · 告警信息" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">告警信息</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="智能关护管理系统 界面切换"><button class="tab on" type="button" data-src="assets/guanhu-1.jpg" data-cap="告警信息"><span>01</span>告警信息</button><button class="tab" type="button" data-src="assets/guanhu-2.jpg" data-cap="告警处置与视频联动"><span>02</span>告警处置与视频联动</button><button class="tab" type="button" data-src="assets/guanhu-3.jpg" data-cap="查房计划"><span>03</span>查房计划</button><button class="tab" type="button" data-src="assets/guanhu-4.jpg" data-cap="查房记录"><span>04</span>查房记录</button></div>
+      </div>
+    </section>
+    <section class="case " id="case-wenlian">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">05</span><span class="ind">公共文化</span></div>
+        <h3>文联资源平台</h3>
+        <div class="en">Sichuan Literature &amp; Art Cloud</div>
+        <p class="tagline">四川文艺资源的一体化归集与展示平台</p>
+        <p class="pos">面向四川文艺领域的一体化资源服务平台，即文艺云数据平台。后台供文联与文艺机构管理人员上传、审核、分类、管理作品与专题并完成数据统计；平台端面向公众，汇聚美术、书法、摄影、舞台艺术、数字艺术等巴蜀文艺精品，划分线上展馆专区集中呈现。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">后台管理端</span><span class="chip">平台端</span></div>
+        <dl class="fns"><div class="fn"><dt>文艺资源库</dt><dd>文艺人才库、文艺作品（幅 / 部）与特色文艺作品库分类建库</dd></div><div class="fn"><dt>上传审核与分类</dt><dd>作品、展览、非遗、专题的上传、审核、分类与下架管理</dd></div><div class="fn"><dt>线上展馆与专题</dt><dd>多展馆专区，非遗项目、舞台艺术、年度优秀歌曲等专题呈现</dd></div><div class="fn"><dt>检索与浏览</dt><dd>文字检索、语音检索，按推荐、热门、最新维度浏览</dd></div><div class="fn"><dt>统计与运营</dt><dd>各艺术门类人才、作品、浏览量、购买观看费用统计；用户与订单管理</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Spring Cloud 2021.0.8</span><span class="tag">Nacos</span><span class="tag">Sa-Token</span><span class="tag">Elasticsearch</span><span class="tag">Easy-ES</span><span class="tag">SkyWalking</span><span class="tag">Seata</span><span class="tag">XXL-JOB</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/wenlian-1.jpg" alt="文联资源平台 · 资源数据统计" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">资源数据统计</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="文联资源平台 界面切换"><button class="tab on" type="button" data-src="assets/wenlian-1.jpg" data-cap="资源数据统计"><span>01</span>资源数据统计</button><button class="tab" type="button" data-src="assets/wenlian-2.jpg" data-cap="平台端首页"><span>02</span>平台端首页</button><button class="tab" type="button" data-src="assets/wenlian-3.jpg" data-cap="作品与视频详情"><span>03</span>作品与视频详情</button></div>
+      </div>
+    </section>
+    <section class="case flip" id="case-tulv">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">06</span><span class="ind">文旅消费</span></div>
+        <h3>徒旅峨边</h3>
+        <div class="en">Ebian Hiking Platform</div>
+        <p class="tagline">徒步文旅场景的三端一体数字化平台</p>
+        <p class="pos">围绕峨边徒步文旅场景搭建的一体化平台，采用前后端分离的 B/S 架构。PC 端管理徒步线路、打卡点、活动徽章、商城与代步出行；小程序端承接游客的打卡、领券、购物与打车，一站式覆盖徒步游玩、消费与出行。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">PC 管理端</span><span class="chip">微信小程序</span></div>
+        <dl class="fns"><div class="fn"><dt>徒步线路配置</dt><dd>难度、里程、预计耗时、价格、封面与收藏状态维护</dd></div><div class="fn"><dt>打卡与徽章</dt><dd>打卡点配置，打卡解锁徽章与优惠券</dd></div><div class="fn"><dt>活动与挑战</dt><dd>活动配置、挑战记录、徒步攻略与收藏</dd></div><div class="fn"><dt>商城与订单</dt><dd>商品管理、抖音订单与直购订单处理</dd></div><div class="fn"><dt>出行配套</dt><dd>徒步专线车、出租车司机管理与代步打车订单</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Java 17</span><span class="tag">Spring Boot 3.5.9</span><span class="tag">MyBatis-Plus</span><span class="tag">Flowable</span><span class="tag">微信支付 V3</span><span class="tag">小程序</span><span class="tag">JimuReport</span><span class="tag">RocketMQ</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/tulv-1.jpg" alt="徒旅峨边 · 线路配置" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">线路配置</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="徒旅峨边 界面切换"><button class="tab on" type="button" data-src="assets/tulv-1.jpg" data-cap="线路配置"><span>01</span>线路配置</button><button class="tab" type="button" data-src="assets/tulv-2.jpg" data-cap="打卡点配置"><span>02</span>打卡点配置</button><button class="tab" type="button" data-src="assets/tulv-3.jpg" data-cap="徒步攻略"><span>03</span>徒步攻略</button></div>
+      </div>
+    </section>
+    <section class="case " id="case-msg">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">07</span><span class="ind">消息中台</span></div>
+        <h3>消息中心</h3>
+        <div class="en">Unified Messaging Hub</div>
+        <p class="tagline">多通道统一消息推送管理平台</p>
+        <p class="pos">统一消息推送管理平台。把短信、App、小程序、站内信等多通道收敛到一套模板与发送链路，支持模板管理、推送记录查询、统计分析与敏感词管控，为各类业务系统提供一站式消息分发服务。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">PC 管理端</span><span class="chip">对外调用 SDK</span></div>
+        <dl class="fns"><div class="fn"><dt>通道商与通道配置</dt><dd>短信服务商、邮件、微信、钉钉、飞书、Push 等通道统一接入与启停</dd></div><div class="fn"><dt>消息模板管理</dt><dd>按业务场景维护模板，支持变量替换与多通道复用</dd></div><div class="fn"><dt>发送与回执</dt><dd>发送记录、回执状态、失败重试与链路追踪</dd></div><div class="fn"><dt>统计分析</dt><dd>按通道、业务系统、时间维度统计发送量与成功率</dd></div><div class="fn"><dt>敏感词与人群推送</dt><dd>敏感词管控；人群文件批量推送、夜间屏蔽与限流</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Java 8</span><span class="tag">Spring Boot 2.6.3</span><span class="tag">RocketMQ</span><span class="tag">Flink</span><span class="tag">XXL-JOB</span><span class="tag">Apollo</span><span class="tag">Prometheus</span><span class="tag">GrayLog</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/msg-1.jpg" alt="消息中心 · 通道商配置" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">通道商配置</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="消息中心 界面切换"><button class="tab on" type="button" data-src="assets/msg-1.jpg" data-cap="通道商配置"><span>01</span>通道商配置</button><button class="tab" type="button" data-src="assets/msg-2.jpg" data-cap="发送记录"><span>02</span>发送记录</button><button class="tab" type="button" data-src="assets/msg-3.jpg" data-cap="消息模板"><span>03</span>消息模板</button></div>
+      </div>
+    </section>
+    <section class="case flip" id="case-tms">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">08</span><span class="ind">物流运输</span></div>
+        <h3>慢游TMS</h3>
+        <div class="en">Transport Management System</div>
+        <p class="tagline">货主到结算的物流运输管理系统</p>
+        <p class="pos">面向物流运输行业的 TMS 管理系统，覆盖货主、司机、车辆、挂车、运单、在途费用、财务、报表、审批、油卡与固定资产等核心业务。管理端承担调度与财务管控，移动端承载司机执行与费用上报，两端协同跑通运输业务。系统基于开源 SmartTMS 二次开发并更名为 ManyouTMS。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">管理端</span><span class="chip">移动端（司机端）</span></div>
+        <dl class="fns"><div class="fn"><dt>货主与合同</dt><dd>货主新建与档案维护，合同签订与合同类型管理</dd></div><div class="fn"><dt>车务管理</dt><dd>车辆、挂车、司机、车队与轨迹查询，证件审核</dd></div><div class="fn"><dt>运输业务</dt><dd>订单（货源）发布与调度分配司机，运单、装卸货与运费结算</dd></div><div class="fn"><dt>在途费用与油卡 ETC</dt><dd>现金出车款、油卡充值申请与上报，ETC 与油卡管理</dd></div><div class="fn"><dt>财务应收应付</dt><dd>提交核算、应收核销、申请开票，应付现金与应付油卡</dd></div><div class="fn"><dt>统计报表与资产</dt><dd>客户毛利、运单利润、资金流水等报表；资产、维保与低值易耗品</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Java 8</span><span class="tag">Spring Boot 2</span><span class="tag">MyBatis-Plus</span><span class="tag">MySQL 8</span><span class="tag">Vue 3</span><span class="tag">Vite 5</span><span class="tag">Ant Design Vue</span><span class="tag">uni-app</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/tms-1.jpg" alt="慢游TMS · 工作台与业务概览" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">工作台与业务概览</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="慢游TMS 界面切换"><button class="tab on" type="button" data-src="assets/tms-1.jpg" data-cap="工作台与业务概览"><span>01</span>工作台与业务概览</button><button class="tab" type="button" data-src="assets/tms-2.jpg" data-cap="订单（货源）管理"><span>02</span>订单（货源）管理</button><button class="tab" type="button" data-src="assets/tms-3.jpg" data-cap="运单管理"><span>03</span>运单管理</button><button class="tab" type="button" data-src="assets/tms-4.jpg" data-cap="司机端首页"><span>04</span>司机端首页</button></div>
+      </div>
+    </section>
+    <section class="case " id="case-erp">
+      <div class="case-text">
+        <div class="case-eyebrow"><span class="num">09</span><span class="ind">商贸流通</span></div>
+        <h3>慢游ERP</h3>
+        <div class="en">Inventory &amp; Trade ERP</div>
+        <p class="tagline">采购销售库存财务一体的进销存系统</p>
+        <p class="pos">一套前后端分离的进销存系统，覆盖基础数据、产品、采购、销售、库内作业、财务与报表。面向中小商贸与仓储企业，也适合作为 ERP 二次开发的基础项目；Docker 一条命令即可起全栈，并自带覆盖各业务模块的演示数据。</p>
+        <div class="ends"><span class="lb">交付端</span><span class="chip">业务端</span><span class="chip">平台管理端</span></div>
+        <dl class="fns"><div class="fn"><dt>基础数据</dt><dd>客户、供应商、仓库、结算账户与收支项目</dd></div><div class="fn"><dt>产品与批次</dt><dd>产品分类、单位、产品信息，批次管理与临期预警</dd></div><div class="fn"><dt>采购管理</dt><dd>采购开单、采购记录、采购退货与退货记录</dd></div><div class="fn"><dt>销售管理</dt><dd>销售开单、销售记录、销售退货与退货记录</dd></div><div class="fn"><dt>库内作业</dt><dd>入库任务、出库任务、盘点、调拨与库存流水</dd></div><div class="fn"><dt>财务与报表</dt><dd>收付款、应收应付、账户转账、日常收支；采购、销售、库存、批次与收支报表</dd></div></dl>
+        <div class="tags"><span class="lb">技术栈</span><span class="tag">Python 3.9</span><span class="tag">Django 3.2</span><span class="tag">DRF</span><span class="tag">Simple JWT</span><span class="tag">Vue 2.6</span><span class="tag">Ant Design Vue</span><span class="tag">MySQL 8</span><span class="tag">Docker</span></div>
+      </div>
+      <div class="case-media">
+        <figure class="frame">
+          <img src="assets/erp-1.jpg" alt="慢游ERP · 业务端首页" loading="lazy">
+          <figcaption><span class="cap-mode">界面</span><span class="cap-text">业务端首页</span></figcaption>
+        </figure>
+        <div class="tabs" role="tablist" aria-label="慢游ERP 界面切换"><button class="tab on" type="button" data-src="assets/erp-1.jpg" data-cap="业务端首页"><span>01</span>业务端首页</button><button class="tab" type="button" data-src="assets/erp-2.jpg" data-cap="采购开单"><span>02</span>采购开单</button><button class="tab" type="button" data-src="assets/erp-3.jpg" data-cap="产品与批次"><span>03</span>产品与批次</button><button class="tab" type="button" data-src="assets/erp-4.jpg" data-cap="报表统计"><span>04</span>报表统计</button></div>
+      </div>
+    </section>
+    </div>
+  </div>
+
+  <section class="stack" id="stack">
+    <div class="wrap">
+      <div class="sec-head"><h2>技术底座</h2><span>六个共用能力</span></div>
+      <h3>一套骨架，支撑八类场景</h3>
+      <p class="stack-lead">先用一套经过验证的微服务骨架搭起账户、权限、网关、消息与运维能力，再把行业流程建模进业务模块。行业差异留在业务层，通用能力沉淀为可复用组件。</p>
+      <div class="caps"><div class="cap">
+        <h4>微服务底座</h4>
+        <p>以 Nacos 注册配置、Gateway 网关、Seata / TX-LCN 分布式事务、Sentinel 流量治理组成的标准微服务骨架，同一套骨架在客运、仓储、文化、医疗四类系统中复用。</p>
+        <div class="chips"><span class="tag dark">Nacos</span><span class="tag dark">Gateway</span><span class="tag dark">Seata</span><span class="tag dark">TX-LCN</span><span class="tag dark">Sentinel</span></div>
+      </div><div class="cap">
+        <h4>多端协同</h4>
+        <p>PC 管理端、移动 PDA、司机端、微信小程序与开放 SDK 共用一套服务端能力；uni-app 一套代码发布 App、H5 与小程序。</p>
+        <div class="chips"><span class="tag dark">PC</span><span class="tag dark">PDA</span><span class="tag dark">小程序</span><span class="tag dark">uni-app</span><span class="tag dark">H5</span></div>
+      </div><div class="cap">
+        <h4>数据与可视化</h4>
+        <p>MySQL、PostgreSQL（PostGIS）、国产信创数据库多源并存；TDengine 承接时序数据，Elasticsearch 承接检索，ECharts 与积木报表承接看板。</p>
+        <div class="chips"><span class="tag dark">MySQL</span><span class="tag dark">PostGIS</span><span class="tag dark">TDengine</span><span class="tag dark">Elasticsearch</span><span class="tag dark">ECharts</span></div>
+      </div><div class="cap">
+        <h4>物联网接入</h4>
+        <p>MQTT 与 TCP 长连接双通道接入手环、工牌与基站，GPS / 基站融合定位、电子围栏空间计算、RTSP 视频转流与告警录像。</p>
+        <div class="chips"><span class="tag dark">MQTT</span><span class="tag dark">TCP 私有协议</span><span class="tag dark">OneNET</span><span class="tag dark">JTS</span><span class="tag dark">HLS</span></div>
+      </div><div class="cap">
+        <h4>消息与流程</h4>
+        <p>短信、邮件、微信、钉钉、飞书、App Push 多通道统一分发，配合 Flowable 工作流承载审批、查房与业务流转。</p>
+        <div class="chips"><span class="tag dark">多通道推送</span><span class="tag dark">责任链</span><span class="tag dark">Flowable</span><span class="tag dark">WebSocket</span></div>
+      </div><div class="cap">
+        <h4>安全与运维</h4>
+        <p>Spring Security / Sa-Token / OAuth2 统一认证，RBAC 与数据权限分级；SkyWalking 链路追踪、Prometheus 监控、XXL-JOB 调度、Docker 编排交付。</p>
+        <div class="chips"><span class="tag dark">OAuth2</span><span class="tag dark">RBAC</span><span class="tag dark">SkyWalking</span><span class="tag dark">Prometheus</span><span class="tag dark">Docker</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h5>关于本册</h5>
+          <p>本页与配套 PDF 案例册内容一致，界面截图均取自实际交付系统，未做美化处理。案例中的数据为系统运行时的界面呈现。</p>
+        </div>
+        <div>
+          <h5>案例沟通</h5>
+          <p>如需某个系统的功能演示、架构说明或实施方案，可与项目对接人联系。慢游科技 · 2026</p>
+        </div>
+      </div>
+      <div class="foot-line">
+        <span>慢游科技 · 系统案例介绍</span>
+        <span>交通出行 / 物流运输 / 仓储供应链 / 商贸流通 / 文旅消费 / 公共文化 / 医疗照护 / 消息中台</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  document.querySelectorAll('.case').forEach(function (card) {
+    var img = card.querySelector('.frame img');
+    var capText = card.querySelector('.cap-text');
+    var tabs = Array.prototype.slice.call(card.querySelectorAll('.tab'));
+    tabs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (btn.classList.contains('on')) return;
+        tabs.forEach(function (b) { b.classList.remove('on'); });
+        btn.classList.add('on');
+        img.src = btn.getAttribute('data-src');
+        img.alt = btn.textContent.slice(2).trim();
+        capText.textContent = btn.getAttribute('data-cap');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
